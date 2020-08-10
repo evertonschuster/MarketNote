@@ -1,0 +1,12 @@
+{
+  "name": "MarketNote",
+  "displayName": "MarketNote",
+  "expo": {
+    "name": "MarketNote",
+    "slug": "MarketNote",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
