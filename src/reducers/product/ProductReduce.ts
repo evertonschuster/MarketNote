@@ -44,6 +44,9 @@ export function productsReducer(
                 ...state,
                 products: [...state.products, action.payload],
             };
+        case ProductActionType.INITIALIZE_PRODUCT: {
+            return { ...state, products: action.payload }
+        };
         case ProductActionType.UPDATE_PRODUCT:
             let products = state.products.map(e => {
                 if (e.id === action.payload.id) {

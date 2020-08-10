@@ -7,6 +7,7 @@ export enum ProductActionType {
     UPDATE_PRODUCT = "UPDATE_PRODUCTS",
     UPDATE_SITUATION_PRODUCT = "UPDATE_SITUATION_PRODUCTS",
     RESET_SELECTION = "RESET_SELECTION",
+    INITIALIZE_PRODUCT = "INITIALIZE"
 }
 
 export function typedAction<T extends string>(type: T): { type: T };
@@ -24,6 +25,10 @@ export function typedAction(type: string, payload?: any) {
 
 export const AddProduct = (product: Product) => {
     return typedAction(ProductActionType.ADD_PRODUCT, product);
+};
+
+export const InitializeProducts = (products: Product[]) => {
+    return typedAction(ProductActionType.INITIALIZE_PRODUCT, products);
 };
 
 export const UpdateProduct = (product: Product) => {
@@ -44,4 +49,9 @@ export const ResetSelection = () => {
 
 
 
-export type ProductAction = ReturnType<typeof AddProduct | typeof UpdateProduct | typeof RemoveProduct | typeof UpdateSituationProduct | typeof ResetSelection>;
+export type ProductAction = ReturnType<typeof AddProduct |
+    typeof InitializeProducts |
+    typeof UpdateProduct |
+    typeof RemoveProduct |
+    typeof UpdateSituationProduct |
+    typeof ResetSelection>;
